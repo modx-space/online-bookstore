@@ -5,31 +5,13 @@
  * Globals
  */
 
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
-}
-
-
 /*
  * Base structure
  */
 body {
-   color: #fff;
+  //  color: #fff;
    text-align: center;
-   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+   text-shadow: 0 1px 3px rgba(0,0,0,0.65);
 }
 html, body {
   height: 100%;
@@ -61,7 +43,7 @@ html, body {
 
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+  padding: 10px;
 }
 
 
@@ -123,7 +105,6 @@ html, body {
   font-weight: bold;
 }
 
-
 /*
  * Footer
  */
@@ -150,7 +131,7 @@ html, body {
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
-    padding-top: 20%;
+    padding-top: 15%;
     // vertical-align: middle;
   }
   /* Handle the widths */
