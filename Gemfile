@@ -22,6 +22,9 @@ gem 'turbolinks'
 # Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
+# Flexible authentication solution
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
