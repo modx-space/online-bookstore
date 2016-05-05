@@ -2,10 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # devise_for :users
-  devise_for :users, :skip => [:sessions]
-  as :users do
-    get 'signin' => "home#index"
-  end
+  devise_for :users, path: "", controllers: { sessions: "users" }
 
   get 'contact' => 'home#contact'
 
