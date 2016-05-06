@@ -1,27 +1,5 @@
 <div class="books-wrapper">
-  <div class="masthead clearfix">
-    <div class="inner">
-      <nav>
-        <ul class="nav nav-pills navbar-nav navbar-left">
-          <li><a href="<%= guide_books_path %>">检索</a></li>
-          <li class="active"><a href="<%= books_path %>">图书</a></li>
-          <li><a href="/books/recommend">推荐</a></li>
-          <li><a href="/contact">关于</a></li>
-        </ul>
-        <ul class="nav nav-pills navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-2x"></i><span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="/user">个人信息</a></li>
-              <li><a href="/user/history">借阅记录</a></li>
-              <li class="divider"></li>
-              <li><a href="/user/logout">退出</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+  <%= render "layouts/header" %>
 
   <div class="row">
     <div class="col-md-2">
