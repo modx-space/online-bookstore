@@ -1,0 +1,20 @@
+<div class="book-wrapper">
+  <%= render "layouts/header" %>
+
+  <div class="row">
+    <div class="col-md-6">
+      <img src="<%= @book.cover %>">
+    </div>
+    <div class="col-md-6">
+      <h3 class="text-left"><span class="label label-info">书名:</span> <%= @book.name %></h3>
+      <h3 class="text-left"><span class="label label-info">作者:</span> <%= @book.author %></h3>
+      <h4 class="text-left"><span class="label label-info">出版社:</span> <%= @book.press %></h4>
+      <h4 class="text-left"><span class="label label-info">出版日:</span> <%= @book.publish_date %></h4>
+      <h4 class="text-left"><span class="label label-info">语言:</span> <%= @book.language %></h4>
+      <h4 class="text-left"><span class="label label-info">标签:</span> <%= @book.tags %></h4>
+      <h4 class="text-left"><span class="label label-info">简介:</span></h4>
+      <p class="text-justify"><%= @book.intro %></p>
+    </div>
+  </div>
+
+</div>
