@@ -1,7 +1,7 @@
 <div class="books-wrapper">
   <%= render "layouts/header" %>
 
-  <% @books_in_group.each do |books| %>
+  <% @books.in_groups_of(6, false).each do |books| %>
   <div class="row">
     <% books.each do |book| %>
     <div class="col-md-2">
@@ -23,4 +23,7 @@
     <% end %>
   </div>
   <% end %>
+
+  <%= paginate @books, window: 0 %>
+
 </div>
