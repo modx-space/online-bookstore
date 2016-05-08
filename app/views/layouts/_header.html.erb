@@ -2,10 +2,10 @@
   <div class="inner">
     <nav>
       <ul class="nav nav-pills navbar-nav navbar-left">
-        <li class="active"><a href="<%= guide_books_path %>">检索</a></li>
-        <li><a href="<%= books_path %>">图书</a></li>
+        <li class="<%= active_class(guide_books_path) %>"><a href="<%= guide_books_path %>">检索</a></li>
+        <li class="<%= active_class(books_path) %>"><a href="<%= books_path %>">图书</a></li>
         <li><a href="/books/recommend">推荐</a></li>
-        <li><a href="/contact">关于</a></li>
+        <li><a href="<%= contact_path %>">关于</a></li>
       </ul>
       <ul class="nav nav-pills navbar-nav navbar-right">
         <li class="dropdown">
