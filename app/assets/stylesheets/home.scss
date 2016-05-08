@@ -40,7 +40,7 @@ body {
 
 .books-wrapper {
   vertical-align: top;
-  padding-top: 10%;
+  padding-top: 6%;
 }
 
 .cover-container {
@@ -50,6 +50,10 @@ body {
 
 .inner {
   padding: 10px;
+}
+
+.masthead, .cover-container {
+  width: 70%;
 }
 
 .masthead {
@@ -100,14 +104,8 @@ body {
   font-weight: bold;
 }
 
-.mastfoot {
-  color: #999;
-  color: rgba(255,255,255,.5);
+.footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
-}
-
-.masthead, .mastfoot, .cover-container {
   width: 70%;
 }
