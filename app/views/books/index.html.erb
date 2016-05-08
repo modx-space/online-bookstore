@@ -6,7 +6,7 @@
     <% books.each do |book| %>
     <div class="col-md-2">
       <div class="thumbnail">
-        <a href="#" class="thumbnail">
+        <a href="<%= book_path(book) %>" class="thumbnail">
           <img src="<%= book.cover %>" style="width: 180px; height: 200px">
         </a>
         <div class="caption">
