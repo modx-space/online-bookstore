@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.0'
 # Flexible authentication solution
 gem 'devise'
 
+# Powerful paginator
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
