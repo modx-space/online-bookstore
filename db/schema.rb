@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508052102) do
+ActiveRecord::Schema.define(version: 20160508122327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(version: 20160508052102) do
     t.integer  "total",        default: 0, null: false
     t.integer  "available",    default: 0, null: false
   end
+
+  create_table "borrows", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.date     "should_return_date"
+    t.string   "status"
+    t.datetime "returned_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "borrows", ["book_id"], name: "index_borrows_on_book_id", using: :btree
+  add_index "borrows", ["user_id"], name: "index_borrows_on_user_id", using: :btree
 
   create_table "users", id: :bigserial, force: :cascade do |t|
     t.string   "name",               default: "",       null: false
