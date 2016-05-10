@@ -11,5 +11,9 @@ class BooksController < ApplicationController
   end
 
   def borrow
+    @book   = Book.find params[:id]
+    @record = current_user.borrow @book
+
+    render :show
   end
 end

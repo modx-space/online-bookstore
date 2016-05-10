@@ -3,4 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # :registerable, :recoverable, :rememberable, :validatable
   devise :database_authenticatable, :trackable
+
+  has_many :borrows
+
+  def borrow(book)
+    self.borrows.create(book: book, should_return_date: 2.weeks.from_now)
+  end
 end
