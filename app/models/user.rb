@@ -7,6 +7,11 @@ class User < ActiveRecord::Base
   has_many :borrows
 
   def borrow(book)
-    self.borrows.create(book: book, should_return_date: 2.weeks.from_now)
+    record = self.borrows.create(book: book, should_return_date: 2.weeks.from_now)
+
+    book.available -= 1
+    book.save
+
+    record
   end
 end
