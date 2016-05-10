@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20160508122327) do
     t.integer  "user_id"
     t.integer  "book_id"
     t.date     "should_return_date"
-    t.string   "status"
+    t.boolean  "is_returned",        default: false
     t.datetime "returned_at"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   add_index "borrows", ["book_id"], name: "index_borrows_on_book_id", using: :btree
@@ -68,4 +68,6 @@ ActiveRecord::Schema.define(version: 20160508122327) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "borrows", "books"
+  add_foreign_key "borrows", "users"
 end
