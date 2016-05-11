@@ -12,7 +12,7 @@ class BooksController < ApplicationController
 
   def borrow
     @book   = Book.find params[:id]
-    @record = current_user.borrow @book
+    @record, @new_record = current_user.borrow @book
 
     render :show
   end

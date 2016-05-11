@@ -2,12 +2,21 @@
   <%= render "layouts/header" %>
 
   <% if @record %>
-  <div class="alert alert-warning alert-dismissible fade in" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">×</span>
-    </button>
-    <strong>借阅成功!</strong> 到期时间: <%= @record.should_return_date %>
-  </div>
+    <% if @new_record %>
+    <div class="alert alert-success alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <strong>借阅成功! 到期时间: <%= @record.should_return_date %></strong>
+    </div>
+    <% else %>
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <strong>你已借阅此书，尚未归还! 到期时间: <%= @record.should_return_date %>. 如有疑问，请联系管理员!</strong>
+    </div>
+    <% end %>
   <% end %>
 
   <div class="row">
