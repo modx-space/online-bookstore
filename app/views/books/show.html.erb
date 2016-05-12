@@ -44,7 +44,7 @@
     </div>
     <div class="col-md-6 text-right">
       <button type="button" class="btn btn-lg btn-primary">预约</button>
-      <%= link_to "借阅", borrow_book_path(@book), method: :post, class: 'btn btn-lg btn-success' %>
+      <%= link_to "借阅", borrow_book_path(@book), method: :post, class: "btn btn-lg btn-success #{@book.available <= 0 ? 'disabled' : ''}" %>
     </div>
   </div>
 </div>
