@@ -1,0 +1,25 @@
+<% if @record %>
+  <% if @is_new_record %>
+  <div class="alert alert-success alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <% if @record.status == "pending" %>
+    <strong>预约成功!</strong>
+    <% else %>
+    <strong>借阅成功! 到期时间: <%= @record.should_return_date %>. 请联系管理员领书.</strong>
+    <% end %>
+  </div>
+  <% else %>
+  <div class="alert alert-warning alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+    <% if @record.status == "pending" %>
+    <strong>你已预约此书,请耐心等待!</strong>
+    <% else %>
+    <strong>你已借阅此书，尚未归还! 到期时间: <%= @record.should_return_date %>. 如有疑问，请联系管理员.</strong>
+    <% end %>
+  </div>
+  <% end %>
+<% end %>
