@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20160508122327) do
     t.integer  "user_id"
     t.integer  "book_id"
     t.date     "should_return_date"
-    t.boolean  "is_returned",        default: false
+    t.string   "status"
     t.datetime "returned_at"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "borrows", ["book_id"], name: "index_borrows_on_book_id", using: :btree
