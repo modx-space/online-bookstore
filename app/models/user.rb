@@ -34,10 +34,10 @@ class User < ActiveRecord::Base
 
   private
   def is_ordering_or_borrowing?(book)
-    book_ids = self.borrows.to_ary.collect do |borrow|
-      borrow.book_id if [Borrow::PENDING, Borrow::BORROWING].include?(borrow.status)
+    ordered_or_borrowed_books = self.borrows.collect do |borrow|
+      borrow.book if [Borrow::PENDING, Borrow::BORROWING].include?(borrow.status)
     end
 
-    book_ids.include?(book.id)
+    ordered_or_borrowed_books.include?(book)
   end
 end
