@@ -5,7 +5,7 @@
 
   <div class="row">
     <div class="col-md-6">
-      <img src="<%= @book.cover %>">
+      <a href="<%= book_path(@book) %>"><img src="<%= @book.cover %>"></a>
     </div>
     <div class="col-md-6">
       <h3 class="text-left"><span class="label label-info">书名:</span> <%= @book.name %></h3>
