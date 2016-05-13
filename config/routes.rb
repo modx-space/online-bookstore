@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     member do
       post  'borrow'
+      post  'order'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

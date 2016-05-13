@@ -16,4 +16,11 @@ class BooksController < ApplicationController
 
     render :show
   end
+
+  def order
+    @book = Book.find params[:id]
+    @record, @is_new_record = current_user.order @book
+
+    render :show
+  end
 end
