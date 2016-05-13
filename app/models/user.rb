@@ -9,15 +9,15 @@ class User < ActiveRecord::Base
   def borrow(book)
     if is_borrowing?(book)
       record = Borrow.find_by book: book, user: self, status: Borrow::BORROWING
-      new_record = false
+      is_new_record = false
     else
       record = self.borrows.create(book: book, should_return_date: 2.weeks.from_now, status: Borrow::BORROWING)
       book.available -= 1
       book.save
-      new_record = true
+      is_new_record = true
     end
 
-    [record, new_record]
+    [record, is_new_record]
   end
 
   private
