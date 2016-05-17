@@ -25,6 +25,12 @@
         <span class="label label-default">总量: <%= @book.total %></span>
         <span class="label label-default">库存: <%= @book.available %></span>
       </h3>
+      <h4>
+        <span class="label label-info">当前借阅: <%= @who_is_borrowing.collect { |user| user.name }.join(',') %></span>
+      </h4>
+      <h4>
+        <span class="label label-info">排队人数: <%= @who_is_ordering.count %></span>
+      </h4>
     </div>
     <div class="col-md-6 text-right">
       <%= link_to "预约", order_book_path(@book), method: :post, class: "btn btn-lg btn-primary" %>
