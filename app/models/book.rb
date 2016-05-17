@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  default_scope { order(:id) }
+
   paginates_per 12
 
   has_many :borrows
