@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get  'contact' => 'home#contact'
 
   # devise_for :users
   devise_for :users, path: "", controllers: { sessions: "users" }
 
-  get 'contact' => 'home#contact'
+  devise_scope :user do
+    resources :users, only: [:collection] do
+      get 'history', on: :collection
+    end
+  end
 
   resources :books do
     collection do

@@ -32,6 +32,15 @@ class User < ActiveRecord::Base
     [record, is_new_record]
   end
 
+  def action_history
+    all_borrows = self.borrows
+    ordering_records  = all_borrows.collect { |borrow| borrow if borrow.status == Borrow::PENDING }.compact
+    borrowing_records = all_borrows.collect { |borrow| borrow if borrow.status == Borrow::BORROWING }.compact
+    returned_records  = all_borrows.collect { |borrow| borrow if borrow.status == Borrow::RETURNED }.compact
+
+    [ordering_records, borrowing_records, returned_records]
+  end
+
   private
   def is_ordering_or_borrowing?(book)
     ordered_or_borrowed_books = self.borrows.collect do |borrow|
