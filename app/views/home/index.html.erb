@@ -1,15 +1,5 @@
 <div class="home-wrapper">
-  <div class="masthead clearfix">
-    <div class="inner">
-      <nav>
-        <ul class="nav masthead-nav">
-          <li class="active">
-            <a href="/contact">关于</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+  <%= render "layouts/home_nav" %>
 
   <div class="login inner">
     <%= form_for(@user, url: user_session_path, html: {class: 'form-horizontal'}) do |f| %>
