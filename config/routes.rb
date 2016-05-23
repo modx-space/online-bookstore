@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, path: "", controllers: { sessions: "users" }
 
   devise_scope :user do
-    resource :user, only: [:member] do
+    resource :user, only: [:history, :edit, :update] do
       get 'history'
     end
   end

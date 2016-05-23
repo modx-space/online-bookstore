@@ -1,0 +1,58 @@
+<div class="book-wrapper">
+  <%= render "layouts/header" %>
+
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <% if @is_updated %>
+      <div class="alert alert-success" role="alert">信息更新成功!</div>
+      <% else %>
+      <div class="alert alert-warning" role="alert">为了方便递送，请准确提供如下信息!</div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= form_for(current_user, url: user_path, html: {class: 'form-horizontal'}) do |f| %>
+    <div class="form-group">
+      <%= f.label :email, "邮箱", class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.email_field :email, class: 'form-control', disabled: true %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :name, "名字", class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :team, "团队", class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :team, class: 'form-control', placeholder: 'Mobile' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :building, "楼号", class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :building, class: 'form-control', placeholder: 'PVGxx' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :office, "办公室", class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :office, class: 'form-control', placeholder: 'Ax | Bx | Cx | Dx' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :seat, "座位", class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :seat, class: 'form-control', placeholder: 'xx' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-4 col-md-4">
+        <%= f.submit "更新", class: 'btn btn-block btn-success' %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
